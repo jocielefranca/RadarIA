@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radar de Adoção de IA - Grupo Diagonal</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #003d33;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #ffffff;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        .logo svg {
+            width: 60px;
+            height: 60px;
+            margin-right: 20px;
+            stroke: #ffffff;
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+        }
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        h3 {
+            font-size: 20px;
+            margin: 15px 0 10px;
+            color: #003d33;
+        }
+        .ecosystem {
+            background: #ffffff;
+            color: #003d33;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            margin-bottom: 30px;
+            padding: 25px;
+        }
+        .ecosystem-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #003d33;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid #00695c;
+            padding-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th {
+            background-color: #00695c;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        td, th {
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+        }
+        tr:nth-child(even) {
+            background-color: #f0f0f0;
+        }
+        tr:hover {
+            background-color: #e0f2f1;
+        }
+        .problem-section {
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            color: #003d33;
+        }
+        .problem-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .problem-description {
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        .scorecard {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .card {
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .tag {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .tag[data-status="Adote"] {
+            background-color: #4caf50;
+            color: white;
+        }
+        .tag[data-status="Experimente"] {
+            background-color: #2196f3;
+            color: white;
+        }
+        .tag[data-status="Avalie"] {
+            background-color: #ff9800;
+            color: white;
+        }
+        .tag[data-status="Evite"] {
+            background-color: #f44336;
+            color: white;
+        }
+        .note {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+            font-style: italic;
+        }
+        ul {
+            margin: 5px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="logo">
+    <svg viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="45" stroke="#ffffff" stroke-width="5" fill="none" />
+        <line x1="50" y1="5" x2="50" y2="95" stroke="#ffffff" stroke-width="3" />
+        <line x1="5" y1="50" x2="95" y2="50" stroke="#ffffff" stroke-width="3" />
+        <line x1="20" y1="20" x2="80" y2="80" stroke="#ffffff" stroke-width="2" />
+        <line x1="80" y1="20" x2="20" y2="80" stroke="#ffffff" stroke-width="2" />
+    </svg>
+    <h1>Radar de Adoção de IA - Grupo Diagonal</h1>
+</div>
+
+<!-- Seção 1: Ecossistemas por Área -->
+<div class="ecosystem">
+    <div class="ecosystem-title">Ecossistema Produção</div>
+    <table>
+        <tr>
+            <th>Área</th><th>Evite</th><th>Avalie</th><th>Experimente</th><th>Adote</th>
+        </tr>
+        <tr><td>Engenharia de Obra</td><td>Substituir engenheiros</td><td>Preditivo de falhas (Manus Insights)</td><td>Simular cronogramas com IA generativa</td><td>Copilotos para diário de obra (Manus Field)</td></tr>
+        <tr><td>Incorporação</td><td>Decisão 100% autônoma</td><td>Análise de viabilidade com IA</td><td>Gerar estudos preliminares com GPT-4</td><td>Automatizar análise de terrenos com visão computacional</td></tr>
+        <tr><td>Projetos</td><td>Criar projetos sem validação</td><td>Apoio em normas técnicas (Manus Normas)</td><td>Copilotos para desenho (AutoCAD AI)</td><td>IA+BIM para otimização (Manus BIM)</td></tr>
+        <tr><td>Suprimentos</td><td>Robôs de compra sem validação</td><td>Preditivo de demanda (Manus Supply)</td><td>Simular cenários com IA generativa</td><td>Automação de cotações e pedidos (Manus + RPA)</td></tr>
+        <tr><td>Sala Técnica</td><td>Substituir inspeções físicas</td><td>Planos de manutenção preditiva</td><td>Análise de imagens (Manus Vision)</td><td>Drones+IA para inspeção (Manus Drone)</td></tr>
+        <tr><td>Produto</td><td>Design final sem validação</td><td>Análise de tendências de mercado</td><td>Prototipagem rápida com Midjourney</td><td>Copilotos para documentação (Manus Docs)</td></tr>
+        <tr><td>Produtividade Interna</td><td>Substituição total manual</td><td>RPA para tarefas repetitivas</td><td>Copilotos administrativos (Manus Assist)</td><td>Automatização de relatórios (Manus Reports)</td></tr>
+    </table>
+</div>
+
+<div class="ecosystem">
+    <div class="ecosystem-title">Ecossistema do Cliente</div>
+    <table>
+        <tr>
+            <th>Área</th><th>Evite</th><th>Avalie</th><th>Experimente</th><th>Adote</th>
+        </tr>
+        <tr><td>Atendimento humano</td><td>Substituir completamente os atendentes humanos</td><td>IA para triagem de chamados e direcionamento inteligente</td><td>Copilotos para atendimento em tempo real (Zendesk AI, Intercom Fin, Freshdesk Freddy AI)</td><td>Assistentes híbridos com IA e humanos, integrados com CRM</td></tr>
+        <tr><td>Autoatendimento</td><td>Bots 100% genéricos sem aprendizado</td><td>IA para FAQ e aprendizado supervisionado</td><td>IA generativa em chatbots com linguagem natural (ex: ChatGPT via API, Cognigy, Blip, Dialogflow CX)</td><td>Soluções omnichannel com IA integrada (ex: WhatsApp + CRM + base de conhecimento)</td></tr>
+        <tr><td>Feedback e Pesquisa</td><td>Coleta sem personalização ou contexto</td><td>IA para clusterizar respostas abertas de NPS/CSAT</td><td>Análise de sentimento com IA (ex: Medallia, Viable, MonkeyLearn)</td><td>Automatizar geração de relatórios e temas recorrentes a partir de feedbacks</td></tr>
+        <tr><td>CRM e Base de Clientes</td><td>Decisões baseadas apenas em dados históricos</td><td>IA para enriquecimento de dados e segmentação</td><td>Salesforce Einstein, Hubspot AI, Dynamics Copilot, Cortex</td><td>IA para comportamento CRM inteligente com IA generativa e preditiva</td></tr>
+        <tr><td>Monitoramento de Reclamações</td><td>Reações só após crises, sem IA proativa</td><td>Ferramentas com alertas baseados em volume</td><td>IA para mapear temas críticos em SAC, redes sociais e Reclame Aqui (ex: Sprinklr, Brand24, Datalake)</td><td>IA integrada ao ciclo de melhoria contínua da experiência</td></tr>
+        <tr><td>E-mails e Comunicados Pós-venda</td><td>Mensagens genéricas e impessoais</td><td>IA para segmentação de mensagens</td><td>IA para geração personalizada de e-mails com tom da marca (ex: Lavender, Copy.ai)</td><td>Fluxos automatizados com IA generativa e preditiva integrada ao CRM e jornada</td></tr>
+        <tr><td>Gestão de Comunidades</td><td>Moderação 100% automatizada e impessoal</td><td>IA para apoiar curadoria de interações em grupos</td><td>Ferramentas com IA para engajamento (ex: Circle AI, Tribe AI, Bettermode)</td><td>Copilotos para moderadores + IA para extração de insights de comunidades</td></tr>
+        <tr><td>Relacionamento</td><td>Chatbots para decisões críticas</td><td>Chatbots proativos complexos</td><td>Chatbots para FAQ (Manus Chat)</td><td>Assistentes virtuais 24/7 com GPT-4</td></tr>
+        <tr><td>Comercial</td><td>Precificação sem controle</td><td>Preditivo de comportamento (Manus Predict)</td><td>Simular vendas com IA generativa</td><td>Copilotos para CRM (Manus CRM)</td></tr>
+        <tr><td>Assistência Técnica</td><td>Substituir técnicos em campo</td><td>Previsão de chamados (Manus Alert)</td><td>Triagem/classificação com IA</td><td>Automação de diagnósticos (Manus Diagnose)</td></tr>
+        <tr><td>Marketing</td>
+            <td>
+                <ul>
+                    <li>Campanhas totalmente automatizadas sem revisão humana</li>
+                    <li>Geração de conteúdo sem alinhamento com branding</li>
+                    <li>Uso de deepfakes para representação de clientes</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Loveable para análise de sentimentos do cliente</li>
+                    <li>Adobe Firefly para protótipos de imagens</li>
+                    <li>Brandwatch para análise de mercado</li>
+                    <li>Análise de comportamento com IA (Manus Predict)</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Copilotos para campanhas (Manus Campaigns)</li>
+                    <li>Beautiful.ai para criação de apresentações</li>
+                    <li>Canva Magic Design para criação de conteúdos</li>
+                    <li>Jasper para geração de copywriting</li>
+                    <li>Midjourney para conceitos visuais</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Segmentação personalizada com IA (Manus Segment)</li>
+                    <li>ChatGPT para ideação e primeiros drafts</li>
+                    <li>Grammarly para revisão de conteúdo</li>
+                    <li>Google Analytics Insights automáticos</li>
+                    <li>Hootsuite Insights para análise de redes sociais</li>
+                </ul>
+            </td>
+        </tr>
+        <tr><td>Cobrança</td><td>Cobrança agressiva automatizada</td><td>Análise de risco (Manus Risk)</td><td>Assistentes de negociação com IA</td><td>Previsão e automação (Manus Collector)</td></tr>
+        <tr><td>Crédito Imobiliário</td><td>Aprovar crédito automaticamente</td><td>Modelos híbridos de scoring</td><td>Validação documental com OCR+IA</td><td>Análise automatizada PJ (Manus Credit)</td></tr>
+        <tr><td>Produtividade Interna</td><td>Substituir pessoas por IA</td><td>RPA para tarefas repetitivas</td><td>Copilotos para relatórios (Manus Reports)</td><td>Automatização de processos (Manus Flow)</td></tr>
+    </table>
+</div>
+
+<div class="ecosystem">
+    <div class="ecosystem-title">Ecossistema de Operações</div>
+    <table>
+        <tr>
+            <th>Área</th><th>Evite</th><th>Avalie</th><th>Experimente</th><th>Adote</th>
+        </tr>
+        <tr><td>Gente e Gestão</td><td>IA para avaliação autônoma</td><td>Clima organizacional com IA</td><td>Chatbots internos RH (Manus RH)</td><td>Automação admissão/férias (Manus People)</td></tr>
+        <tr><td>Financeiro</td><td>Decisão financeira autônoma</td><td>Auditoria preditiva (Manus Audit)</td><td>Análise de risco com IA</td><td>Copilotos para lançamentos (Manus Finance)</td></tr>
+        <tr><td>Controladoria</td><td>Relatórios sem validação</td><td>Previsão de caixa (Manus Cash)</td><td>Análise preditiva despesas</td><td>Robôs para fechamento contábil (Manus Close)</td></tr>
+        <tr><td>Jurídico</td><td>Interpretar leis sem revisão</td><td>Revisão inicial de contratos (Manus Legal)</td><td>Triagem de documentos com IA</td><td>Copilotos para análise contratual (Manus Contracts)</td></tr>
+        <tr><td>Excelência Operacional</td><td>Decisões sem humano</td><td>Simulações de processos</td><td>Process Mining + IA (Manus Process)</td><td>RPA para tarefas manuais (Manus Automate)</td></tr>
+        <tr><td>Orçamento</td><td>Orçamentos sem supervisão</td><td>Previsão de desvios (Manus Budget)</td><td>Copilotos para simulações</td><td>Robôs para consolidação (Manus Consolidate)</td></tr>
+        <tr><td>Planejamento e Controle</td><td>Mudar cronogramas sem revisão</td><td>Preditivo de atrasos (Manus Schedule)</td><td>Simulação de cronogramas</td><td>Copilotos para atualização (Manus Planner)</td></tr>
+        <tr><td>Produtividade Interna</td><td>Substituição total sem supervisão</td><td>RPA para automação manual</td><td>Copilotos para apoio operacional</td><td>Automatização de relatórios (Manus Reports)</td></tr>
+    </table>
+</div>
+
+<!-- Seção 2: Soluções por Tipo de IA -->
+<div class="ecosystem">
+    <div class="ecosystem-title">Soluções por Tipo de IA</div>
+    <table>
+        <tr><th>Tipo</th><th>Evite</th><th>Avalie</th><th>Experimente</th><th>Adote</th></tr>
+        <tr>
+            <td>IA Generativa</td>
+            <td>Conteúdos sem revisão humana</td>
+            <td>Textos institucionais</td>
+            <td>Prototipagem de conteúdo (Manus Create)</td>
+            <td>Copilotos criativos (ChatGPT, GitHub Copilot, Manus Assist)</td>
+        </tr>
+        <tr>
+            <td>RPA</td>
+            <td>Automatizar sem validação</td>
+            <td>Processos simples e repetitivos</td>
+            <td>Fluxos administrativos (Manus Automate)</td>
+            <td>UiPath, Power Automate, Manus Flow</td>
+        </tr>
+        <tr>
+            <td>BI com IA</td>
+            <td>Dashboards sem contexto</td>
+            <td>Smart narrative (Manus Insights)</td>
+            <td>Insights com IA</td>
+            <td>Power BI, Tableau, Manus Analytics</td>
+        </tr>
+        <tr>
+            <td>Process Mining</td>
+            <td>Automatizar decisões críticas</td>
+            <td>Mapeamento de gargalos (Manus Process)</td>
+            <td>PoCs com áreas-chaves</td>
+            <td>Celonis, IBM Process Mining, Manus Flow</td>
+        </tr>
+        <tr>
+            <td>Assistentes Virtuais</td>
+            <td>Substituir humanos em decisões</td>
+            <td>FAQ e suporte simples</td>
+            <td>Classificadores de chamado (Manus Chat)</td>
+            <td>Intercom, Microsoft Copilot, Manus Assist</td>
+        </tr>
+        <tr>
+            <td>Classificação Inteligente</td>
+            <td>Etiquetagem automática sem teste</td>
+            <td>Modelos supervisionados</td>
+            <td>MonkeyLearn em PoCs</td>
+            <td>Automação de triagens (Manus Classify)</td>
+        </tr>
+        <tr>
+            <td>Visão Computacional</td>
+            <td>Substituir inspeções humanas críticas</td>
+            <td>Detecção básica de anomalias</td>
+            <td>Monitoramento de obras (Manus Vision)</td>
+            <td>Controle de qualidade automatizado</td>
+        </tr>
+        <tr>
+            <td>IA para Documentos</td>
+            <td>Processamento sem validação</td>
+            <td>OCR simples</td>
+            <td>Extração de dados contratuais</td>
+            <td>Manus Docs para gestão documental</td>
+        </tr>
+    </table>
+</div>
+
+<!-- Seção 3: Soluções Específicas -->
+<div class="ecosystem">
+    <div class="ecosystem-title">🧠 Soluções Específicas</div>
+    
+    <div class="problem-section">
+        <div class="problem-title">1. Soluções para reuniões</div>
+        <div class="problem-description">Problemas: Volume excessivo, falta de registro, pouca objetividade e tempo perdido.</div>
+        <table>
+            <tr>
+                <th>Solução</th>
+                <th>Categoria</th>
+                <th>Avalie</th>
+                <th>Experimente</th>
+                <th>Adote</th>
+            </tr>
+            <tr>
+                <td>Otter.ai / Fireflies.ai / Airgram</td>
+                <td>Transcrição + Resumo</td>
+                <td>Transcrever reuniões-chave</td>
+                <td>Automatizar agendas com IA</td>
+                <td>Resumos + ações automáticos (Manus Meet)</td>
+            </tr>
+            <tr>
+                <td>Krisp.ai</td>
+                <td>Limpeza de áudio</td>
+                <td>Avaliar em reuniões com ruído</td>
+                <td>Testar com times externos</td>
+                <td>Adoção em todas calls</td>
+            </tr>
+            <tr>
+                <td>tl;dv / Read.ai</td>
+                <td>Gravação + Insights</td>
+                <td>Transcrição de reuniões longas</td>
+                <td>Testes com lideranças</td>
+                <td>Automatizar resumos + tags (Manus Meet)</td>
+            </tr>
+            <tr>
+                <td>Microsoft Teams Copilot</td>
+                <td>Copiloto em reunião</td>
+                <td>Avaliar recursos ativos</td>
+                <td>Experiência com coordenação</td>
+                <td>Adotar se licenciamento permitir</td>
+            </tr>
+            <tr>
+                <td>Manus Meet</td>
+                <td>Solução integrada</td>
+                <td>Testes em departamentos</td>
+                <td>Implementação parcial</td>
+                <td>Adoção corporativa</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="problem-section">
+        <div class="problem-title">2. Soluções para melhorar análises de dados</div>
+        <div class="problem-description">Problemas: Superficialidade, baixa maturidade analítica, insights fracos.</div>
+        <table>
+            <tr>
+                <th>Solução</th>
+                <th>Categoria</th>
+                <th>Avalie</th>
+                <th>Experimente</th>
+                <th>Adote</th>
+            </tr>
+            <tr>
+                <td>Power BI + IA (Smart Narrative, Forecast, Q&A)</td>
+                <td>Análise Preditiva</td>
+                <td>Avaliar integração com Excel</td>
+                <td>Aplicar em relatórios operacionais</td>
+                <td>Dashboards com insights inteligentes (Manus Analytics)</td>
+            </tr>
+            <tr>
+                <td>MonkeyLearn / BigML</td>
+                <td>Classificação de Texto / Machine Learning</td>
+                <td>Avaliar classificações básicas</td>
+                <td>Etiquetagem automática (chamados, leads)</td>
+                <td>Roteamento e insights preditivos (Manus Classify)</td>
+            </tr>
+            <tr>
+                <td>ChatGPT + Análise de CSV</td>
+                <td>Copiloto de Dados</td>
+                <td>Testar em análises manuais</td>
+                <td>Treinar equipes para análise natural</td>
+                <td>Adotar copiloto para BI/DataOps (Manus Data)</td>
+            </tr>
+            <tr>
+                <td>SAS Viya / IBM Watson</td>
+                <td>Plataformas completas</td>
+                <td>Avaliar para áreas maduras</td>
+                <td>Provas de conceito específicas</td>
+                <td>Adotar em áreas críticas</td>
+            </tr>
+            <tr>
+                <td>Manus Insights</td>
+                <td>Análise Preditiva</td>
+                <td>Testes em um departamento</td>
+                <td>Implementação em áreas estratégicas</td>
+                <td>Adoção corporativa</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="problem-section">
+        <div class="problem-title">3. Soluções de IA para Marketing</div>
+        <div class="problem-description">Problemas: Demanda por conteúdo personalizado, necessidade de velocidade na produção, consistência de branding.</div>
+        <table>
+            <tr>
+                <th>Solução</th>
+                <th>Categoria</th>
+                <th>Evite</th>
+                <th>Avalie</th>
+                <th>Experimente</th>
+                <th>Adote</th>
+            </tr>
+            <tr>
+                <td>ChatGPT / Gemini / Claude</td>
+                <td>Geração de Texto</td>
+                <td>Conteúdo final sem revisão</td>
+                <td>Brainstorming e ideias</td>
+                <td>Primeiros drafts de copy</td>
+                <td>Geração de ideias e templates</td>
+            </tr>
+            <tr>
+                <td>Loveable</td>
+                <td>Análise de Sentimento</td>
+                <td>Tomar decisões apenas com IA</td>
+                <td>Análise de feedbacks</td>
+                <td>Testes A/B emocionais</td>
+                <td>Otimização de mensagens-chave</td>
+            </tr>
+            <tr>
+                <td>Canva Magic Design</td>
+                <td>Design Automatizado</td>
+                <td>Identidade visual completa</td>
+                <td>Protótipos rápidos</td>
+                <td>Conteúdo para redes sociais</td>
+                <td>Templates e materiais internos</td>
+            </tr>
+            <tr>
+                <td>Beautiful.ai / Tome.app</td>
+                <td>Apresentações</td>
+                <td>Apresentações críticas sem revisão</td>
+                <td>Apresentações internas</td>
+                <td>Materiais de vendas</td>
+                <td>Pitch decks e relatórios</td>
+            </tr>
+            <tr>
+                <td>Midjourney / DALL-E 3</td>
+                <td>Imagens Geradas</td>
+                <td>Imagens para materiais oficiais</td>
+                <td>Conceitos visuais</td>
+                <td>Protótipos de campanhas</td>
+                <td>Brainstorming visual</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="problem-section">
+        <div class="problem-title">4. Análise e Otimização para Marketing</div>
+        <div class="problem-description">Problemas: Volume de dados, dificuldade em extrair insights acionáveis, personalização em escala.</div>
+        <table>
+            <tr>
+                <th>Solução</th>
+                <th>Categoria</th>
+                <th>Evite</th>
+                <th>Avalie</th>
+                <th>Experimente</th>
+                <th>Adote</th>
+            </tr>
+            <tr>
+                <td>Manus Predict</td>
+                <td>Análise Preditiva</td>
+                <td>Decisões 100% automatizadas</td>
+                <td>Padrões de comportamento</td>
+                <td>Segmentação avançada</td>
+                <td>Recomendações de conteúdo</td>
+            </tr>
+            <tr>
+                <td>Google Analytics + IA</td>
+                <td>Análise Web</td>
+                <td>Interpretação automática</td>
+                <td>Insights automáticos</td>
+                <td>Previsão de conversão</td>
+                <td>Otimização de jornada</td>
+            </tr>
+            <tr>
+                <td>Brandwatch / Meltwater</td>
+                <td>Mídia Social</td>
+                <td>Respostas automáticas</td>
+                <td>Monitoramento de marca</td>
+                <td>Análise de sentimentos</td>
+                <td>Detecção de tendências</td>
+            </tr>
+            <tr>
+                <td>HubSpot AI</td>
+                <td>Marketing Automation</td>
+                <td>Fluxos sem teste</td>
+                <td>Lead scoring básico</td>
+                <td>Personalização de conteúdo</td>
+                <td>Segmentação dinâmica</td>
+            </tr>
+            <tr>
+                <td>Loveable + CRM</td>
+                <td>Análise Emocional</td>
+                <td>Julgamentos sem contexto</td>
+                <td>Análise de satisfação</td>
+                <td>Otimização de mensagens</td>
+                <td>Personalização emocional</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Seção 4: Categorias de Soluções -->
+<div class="ecosystem">
+    <div class="ecosystem-title">BI e Analytics com IA</div>
+    <table>
+        <tr>
+            <th>Solução</th><th>Evite</th><th>Avalie</th><th>Experimente</th><th>Adote</th>
+        </tr>
+        <tr><td>Power BI + AI Insights</td><td>Análises não validadas</td><td>Forecast básico</td><td>Explicações automáticas</td><td>Preditivo em dashboards (Manus Analytics)</td></tr>
+        <tr><td>Looker / Tableau + IA</td><td>Complexidade sem ROI</td><td>Exploração de tendências</td><td>Projetos com dados maduros</td><td>Insights automatizados</td></tr>
+        <tr><td>MonkeyLearn / BigML</td><td>Modelos não supervisionados</td><td>Classificação de dados</td><td>Etiquetagem automática</td><td>Roteamento inteligente (Manus Classify)</td></tr>
+        <tr><td>Manus Insights</td><td>Implementação sem preparação</td><td>Testes em um departamento</td><td>Implementação parcial</td><td>Adoção corporativa</td></tr>
+        <tr><td>Google Analytics + IA</td><td>Tomada de decisão automática</td><td>Análise de comportamento</td><td>Previsão de conversão</td><td>Otimização automática</td></tr>
+    </table>
+</div>
+
+<div class="ecosystem">
+    <div class="ecosystem-title">RPA e Automação Inteligente</div>
+    <table>
+        <tr>
+            <th>Solução</th><th>Evite</th><th>Avalie</th><th>Experimente</th><th>Adote</th>
+        </tr>
+        <tr><td>UiPath / Automation Anywhere</td><td>Automação irrestrita</td><td>Mapeamento de tarefas</td><td>Backoffice financeiro/RH</td><td>Processos repetitivos consolidados (Manus Automate)</td></tr>
+        <tr><td>Power Automate</td><td>Workflows mal mapeados</td><td>Automação de e-mails e planilhas</td><td>Times de controladoria e operações</td><td>Integração com Office e SharePoint</td></tr>
+        <tr><td>Zapier + IA</td><td>Automação sem controle</td><td>Gatilhos simples</td><td>Testes com atendimento e leads</td><td>Operações entre sistemas leves</td></tr>
+        <tr><td>Manus Flow</td><td>Processos não documentados</td><td>Automações simples</td><td>Fluxos departamentais</td><td>Automação de processos corporativos</td></tr>
+        <tr><td>Blue Prism</td><td>Implementação complexa sem necessidade</td><td>Processos críticos</td><td>Integrações complexas</td><td>Automação em grande escala</td></tr>
+    </table>
+</div>
+
+<div class="ecosystem">
+    <div class="ecosystem-title">IA Generativa para Marketing</div>
+    <table>
+        <tr>
+            <th>Solução</th><th>Evite</th><th>Avalie</th><th>Experimente</th><th>Adote</th>
+        </tr>
+        <tr>
+            <td>ChatGPT / Copilot</td>
+            <td>Conteúdo final sem revisão</td>
+            <td>Ideiação e brainstorming</td>
+            <td>Geração de copy básico</td>
+            <td>Resumos, templates, ideias (integrado com Manus Create)</td>
+        </tr>
+        <tr>
+            <td>Loveable</td>
+            <td>Tomar decisões apenas com IA</td>
+            <td>Análise de feedbacks</td>
+            <td>Testes A/B emocionais</td>
+            <td>Otimização de mensagens-chave</td>
+        </tr>
+        <tr>
+            <td>DALL·E / Midjourney</td>
+            <td>Imagens para materiais oficiais</td>
+            <td>Conceitos visuais</td>
+            <td>Protótipos de campanhas</td>
+            <td>Brainstorming visual e moodboards</td>
+        </tr>
+        <tr>
+            <td>Beautiful.ai / Tome.app</td>
+            <td>Apresentações críticas sem revisão</td>
+            <td>Materiais internos</td>
+            <td>Pitch decks iniciais</td>
+            <td>Relatórios e apresentações rotineiras</td>
+        </tr>
+        <tr>
+            <td>Jasper / Copy.ai</td>
+            <td>Copy final sem edição humana</td>
+            <td>Geração de ideias</td>
+            <td>Variantes de mensagens</td>
+            <td>Templates e estruturas básicas</td>
+        </tr>
+        <tr>
+            <td>Canva Magic Design</td>
+            <td>Identidade visual completa</td>
+            <td>Protótipos rápidos</td>
+            <td>Conteúdo para redes sociais</td>
+            <td>Templates internos e materiais de apoio</td>
+        </tr>
+        <tr>
+            <td>Manus Campaigns</td>
+            <td>Campanhas autônomas</td>
+            <td>Análise de performance</td>
+            <td>Otimização de orçamento</td>
+            <td>Recomendações de canais e mensagens</td>
+        </tr>
+    </table>
+</div>
+
+<div class="ecosystem">
+    <div class="ecosystem-title">Visão Computacional</div>
+    <table>
+        <tr>
+            <th>Solução</th><th>Evite</th><th>Avalie</th><th>Experimente</th><th>Adote</th>
+        </tr>
+        <tr><td>Manus Vision</td><td>Substituir inspeções críticas</td><td>Detecção de equipamentos</td><td>Monitoramento de obras</td><td>Controle de qualidade automatizado</td></tr>
+        <tr><td>OpenCV + Custom Models</td><td>Implementações não testadas</td><td>Provas de conceito</td><td>Soluções específicas</td><td>Sistemas de produção</td></tr>
+        <tr><td>Google Vision AI</td><td>Processamento de dados sensíveis</td><td>Análise de imagens básica</td><td>Classificação de documentos</td><td>Processamento em escala</td></tr>
+        <tr><td>Drone + IA</td><td>Voos autônomos sem supervisão</td><td>Mapeamento básico</td><td>Inspeções periódicas</td><td>Monitoramento contínuo</td></tr>
+    </table>
+</div>
+
+<!-- Seção 5: Scorecard e Radar Consolidado -->
+<div class="ecosystem">
+    <div class="ecosystem-title">Scorecard de Maturidade - Soluções de IA</div>
+    <div class="scorecard">
+        <div class="card">
+            <h3>ChatGPT / Gemini</h3>
+            <p><strong>Categoria:</strong> IA Generativa</p>
+            <p><strong>Uso atual:</strong> Criação de conteúdo, suporte</p>
+            <p><strong>Maturidade:</strong> <span class="tag" data-status="Adote">Adote</span></p>
+            <p class="note">Integrado com Manus Assist</p>
+        </div>
+        <div class="card">
+            <h3>UiPath</h3>
+            <p><strong>Categoria:</strong> RPA</p>
+            <p><strong>Uso atual:</strong> Backoffice financeiro</p>
+            <p><strong>Maturidade:</strong> <span class="tag" data-status="Experimente">Experimente</span></p>
+            <p class="note">Em transição para Manus Automate</p>
+        </div>
+        <div class="card">
+            <h3>Power BI + IA</h3>
+            <p><strong>Categoria:</strong> BI + IA</p>
+            <p><strong>Uso atual:</strong> Explicações automáticas</p>
+            <p><strong>Maturidade:</strong> <span class="tag" data-status="Adote">Adote</span></p>
+            <p class="note">Complementado por Manus Insights</p>
+        </div>
+        <div class="card">
+            <h3>Manus Vision</h3>
+            <p><strong>Categoria:</strong> Visão Computacional</p>
+            <p><strong>Uso atual:</strong> Monitoramento de obras</p>
+            <p><strong>Maturidade:</strong> <span class="tag" data-status="Experimente">Experimente</span></p>
+            <p class="note">Em expansão para novas áreas</p>
+        </div>
+        <div class="card">
+            <h3>Manus Automate</h3>
+            <p><strong>Categoria:</strong> RPA</p>
+            <p><strong>Uso atual:</strong> Processos financeiros</p>
+            <p><strong>Maturidade:</strong> <span class="tag" data-status="Adote">Adote</span></p>
+            <p class="note">Solução corporativa padrão</p>
+        </div>
+        <div class="card">
+            <h3>Manus Assist</h3>
+            <p><strong>Categoria:</strong> Assistente Virtual</p>
+            <p><strong>Uso atual:</strong> Suporte interno</p>
+            <p><strong>Maturidade:</strong> <span class="tag" data-status="Adote">Adote</span></p>
+            <p class="note">Integrado com GPT-4</p>
+        </div>
+        <div class="card">
+            <h3>Microsoft Teams Copilot</h3>
+            <p><strong>Categoria:</strong> Produtividade</p>
+            <p><strong>Uso atual:</strong> Testes em TI</p>
+            <p><strong>Maturidade:</strong> <span class="tag" data-status="Avalie">Avalie</span></p>
+            <p class="note">Aguardando licenciamento</p>
+        </div>
+        <div class="card">
+            <h3>Manus Docs</h3>
+            <p><strong>Categoria:</strong> IA Documental</p>
+            <p><strong>Uso atual:</strong> Gestão contratual</p>
+            <p><strong>Maturidade:</strong> <span class="tag" data-status="Experimente">Experimente</span></p>
+            <p class="note">Em implementação no jurídico</p>
+        </div>
+        <div class="card">
+            <h3>Loveable</h3>
+            <p><strong>Categoria:</strong> Análise Emocional</p>
+            <p><strong>Uso atual:</strong> Análise de feedbacks</p>
+            <p><strong>Maturidade:</strong> <span class="tag" data-status="Experimente">Experimente</span></p>
+            <p class="note">Integração com CRM em teste</p>
+        </div>
+        <div class="card">
+            <h3>Manus Campaigns</h3>
+            <p><strong>Categoria:</strong> Otimização de Campanhas</p>
+            <p><strong>Uso atual:</strong> Recomendações de canais</p>
+            <p><strong>Maturidade:</strong> <span class="tag" data-status="Adote">Adote</span></p>
+            <p class="note">Solução corporativa padrão</p>
+        </div>
+        <div class="card">
+            <h3>Canva Magic Design</h3>
+            <p><strong>Categoria:</strong> Design Automatizado</p>
+            <p><strong>Uso atual:</strong> Templates para redes sociais</p>
+            <p><strong>Maturidade:</strong> <span class="tag" data-status="Adote">Adote</span></p>
+            <p class="note">Uso em toda equipe de marketing</p>
+        </div>
+        <div class="card">
+            <h3>Beautiful.ai</h3>
+            <p><strong>Categoria:</strong> Apresentações Automatizadas</p>
+            <p><strong>Uso atual:</strong> Relatórios internos</p>
+            <p><strong>Maturidade:</strong> <span class="tag" data-status="Experimente">Experimente</span></p>
+            <p class="note">Em teste para materiais de vendas</p>
+        </div>
+    </div>
+</div>
+
+<div class="ecosystem">
+    <div class="ecosystem-title">Radar de Soluções e Plataformas de IA</div>
+    <table>
+        <tr>
+            <th>Solução / Plataforma</th>
+            <th>Categoria</th>
+            <th>Evite</th>
+            <th>Avalie</th>
+            <th>Experimente</th>
+            <th>Adote</th>
+        </tr>
+        <tr>
+            <td>ChatGPT / Copilot / Gemini</td>
+            <td>IA Generativa</td>
+            <td>Uso sem supervisão crítica</td>
+            <td>Criação de conteúdo</td>
+            <td>Copilotos para times</td>
+            <td>Suporte a decisões não críticas (com Manus Assist)</td>
+        </tr>
+        <tr>
+            <td>Power BI + AI Insights</td>
+            <td>BI + IA</td>
+            <td>Análises automatizadas não validadas</td>
+            <td>Forecast de indicadores</td>
+            <td>Explicações automáticas de dados</td>
+            <td>Análises preditivas em dashboards (com Manus Insights)</td>
+        </tr>
+        <tr>
+            <td>UiPath / Automation Anywhere</td>
+            <td>RPA + IA</td>
+            <td>Automação sem revisão</td>
+            <td>Mapeamento de tarefas manuais</td>
+            <td>Processos de backoffice simples</td>
+            <td>Automatização recorrente de processos (transição para Manus Automate)</td>
+        </tr>
+        <tr>
+            <td>DALL·E / Midjourney</td>
+            <td>IA para Imagens</td>
+            <td>Geração irrestrita sem curadoria</td>
+            <td>Testes em marketing e produto</td>
+            <td>Criação visual para campanhas</td>
+            <td>Imagens para comunicação interna e externa</td>
+        </tr>
+        <tr>
+            <td>MonkeyLearn / GPT + Zapier</td>
+            <td>IA para Classificação</td>
+            <td>Classificação automatizada sem contexto</td>
+            <td>Etiquetagem de chamados</td>
+            <td>Triagem automática</td>
+            <td>Roteamento inteligente de demandas (com Manus Classify)</td>
+        </tr>
+        <tr>
+            <td>Microsoft Copilot (365, Teams)</td>
+            <td>Produtividade</td>
+            <td>Uso irrestrito sem capacitação</td>
+            <td>Avaliar nos times de suporte</td>
+            <td>Documentação e resumos automáticos</td>
+            <td>Implantar nos times administrativos</td>
+        </tr>
+        <tr>
+            <td>Manus Suite</td>
+            <td>Plataforma Integrada</td>
+            <td>Implementação sem planejamento</td>
+            <td>Módulos específicos</td>
+            <td>Integração departamental</td>
+            <td>Adoção corporativa</td>
+        </tr>
+        <tr>
+            <td>Google Vertex AI</td>
+            <td>Plataforma de ML</td>
+            <td>Modelos não supervisionados</td>
+            <td>Provas de conceito</td>
+            <td>Soluções específicas</td>
+            <td>Modelos preditivos em produção</td>
+        </tr>
+        <tr>
+            <td>Manus Vision</td>
+            <td>Visão Computacional</td>
+            <td>Substituir inspeções críticas</td>
+            <td>Detecção de equipamentos</td>
+            <td>Monitoramento de obras</td>
+            <td>Controle de qualidade automatizado</td>
+        </tr>
+        <tr>
+            <td>Salesforce Einstein</td>
+            <td>IA para CRM</td>
+            <td>Automatização de vendas sem supervisão</td>
+            <td>Análise de pipeline</td>
+            <td>Recomendações de próximos passos</td>
+            <td>Previsão de fechamento (integrado com Manus Predict)</td>
+        </tr>
+        <tr>
+            <td>Loveable</td>
+            <td>Análise Emocional</td>
+            <td>Tomar decisões sem contexto humano</td>
+            <td>Análise de feedbacks de clientes</td>
+            <td>Testes A/B emocionais</td>
+            <td>Otimização de mensagens-chave</td>
+        </tr>
+        <tr>
+            <td>Beautiful.ai / Tome.app</td>
+            <td>Apresentações Automatizadas</td>
+            <td>Materiais críticos sem revisão</td>
+            <td>Relatórios internos</td>
+            <td>Pitch decks iniciais</td>
+            <td>Materiais de rotina e treinamento</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
